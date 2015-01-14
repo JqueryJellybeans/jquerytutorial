@@ -2,7 +2,12 @@
 #jQuery Tutorial
 ===
 
+>"jQuery ... it's just JavaScript"
+>        				- Maria
+
+
 ## background
+
 jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use.
 Hence the motto of: **_Write less, do more._**
 
@@ -44,6 +49,13 @@ The great thing about jQuery is the number of plug-ins or libraries available th
  your scripts 
  
 ## basics - syntax
+
+
+The jQuery syntax is tailor made for selecting HTML elements and performing some action on the element(s).
+
+Basic syntax is: $(selector).action()
+
+
 
 You can write javascript inside jQuery
 	
@@ -134,34 +146,44 @@ Document refers to your file.
 
 
 
-## what are some popular uses
+# Plugins
+---
 
-## effects
+# Effects
+---
 
 # Fading Effects
+---
 
 * .fadeIn() - fadeIn method takes two parameters .fadeIn([duration], [function]). The duration can be written in milliseconds, or "fast" and "slow". The second parameter (function) is optional, and if used will be a callback function.  
 
 * .fadeOut() - the fadeOut method will be written the same way as the fadeIn, but has the opposite effect. The parameters it takes in are also the same. The two methods will look like this.
 
-``` $('#divFade').fadeIn(2000)
+``` 
+$('#divFade').fadeIn(2000)
+
 ```
 
-``` $('#divFade').fadeOut(2000)
+``` 
+$('#divFade').fadeOut(2000)
 ```
 
 With a second parameter the code may look like
-``` $('#divFade').fadeIn(2000, function(){
+
+``` 
+$('#divFade').fadeIn(2000, function(){
         $('#divFade').fadeOut(2000);    
     })
 ```
 
 * .fadeToggle() - Luckily with the jQuery framework we also have the method fadeToggle. This is especially handy when you want a div to fade in and out. It is also written with the same parameters as the fadeIn and fadeOut methods 
-```$('#divFade').fadeToggle(2000);
+```
+$('#divFade').fadeToggle(2000);
 ```
 
 One thing to note is that all four of these methods will also run without any parameters
-```$('#divFade').fadeToggle();
+```
+$('#divFade').fadeToggle();
 ```
 
 * .fadeTo() - can take up to three parameters. .fadeTo([duration], [opacity], [function]).
@@ -227,4 +249,23 @@ $('button').bind("click", function(){
 $('button').unbind('click');
 ```
 
-## traversing
+## Traversal - Moving through your document elements
+---
+
+1. jQuery lets us move through the html elements on our page. Let's set an example html frame:
+  
+   ```
+	<body> //ancestor of all, parent of div.d01 and div.d02
+    	<div class = "d01"> // child of body, parent of h3, sibling of d02
+        	<h3>I'm a little string, short and stout</h3> // descendent of div.d01
+      	</div>
+    	<div class = "d02"> // child of body, parent of h4, sibling of d01
+    		<h4>I'm a little string too, but I don't pout</h4> // descendent of div.d02
+    	</div>
+	</body>
+  ```
+
+1. We can 
+
+
+
