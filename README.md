@@ -6,7 +6,7 @@
 >        				- Maria
 
 
-## background
+## Background
 
 jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use.
 Hence the motto of: **_Write less, do more._**
@@ -252,7 +252,7 @@ $('button').unbind('click');
 ## Traversal - Moving through your document elements
 ---
 
-1. jQuery lets us move through the html elements on our page. Let's set an example html frame:
+1. jQuery lets us traverse or "move through" the html elements on our page. Let's set an example html frame:
   
    ```
 	<body> //ancestor of all, parent of div.d01 and div.d02
@@ -265,7 +265,12 @@ $('button').unbind('click');
 	</body>
   ```
 
-1. We can 
+2. Setting an initial selection:
+
+	```
+	var divs = $('.d01').first()
+	var siblings = divs.siblings()
+
 
 
 
