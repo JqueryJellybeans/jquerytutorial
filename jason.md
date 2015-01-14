@@ -83,10 +83,52 @@ $('#moveBox').slideUp().fadeOut();
 
 
 
+# Events
 
+jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
+* .click()
+* .keyup()
+* .keydown()
+* .keypress()
+* .scroll()
+* .mouseenter()
+* .mouseleave()
+* .mouseover()
 
+The syntax for these methods are usually written as "$('element that is selected')(event type)(function);" An example is below. 
 
+```$('button').click(function(){
+	alert('Hello World');
+})
+```
 
+```$('#image').mouseover(function(){
+		$('#image').slideUp(2000, 'linear');
+})
+```
+
+```$('input').keypress(function(evt){
+	if (evt.key === 13){
+		alert("you pressed enter");
+	}
+})
+```
+
+## Binding and Unbinding
+
+If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener you can utilize the bind and unbind methods. 
+
+.bind() - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
+
+```$('button').bind("click", function(){
+	alert("you have clicked the button");
+})
+```
+
+.unbind() - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An example is below:
+
+```$('button').unbind('click');
+```
 
 
 
