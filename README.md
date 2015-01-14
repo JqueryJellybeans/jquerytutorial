@@ -112,8 +112,21 @@ Document refers to your file.
 	); 
 	```
 
-5. 
+5. One cool thing about jQuery is the ability to chain methods. For example:
 
+	```
+	 // grab li
+	 $( 'li' )									
+    // when li element is clicked
+    .click(function() {							
+    // add a class to the li called ".clicked"
+    	$( this ).addClass( 'clicked' );		
+  		})
+  	// still chained to li, now we use .find to select spans within li
+  		.find( 'span' )							
+	// set title to "Hover over me"
+    .attr( 'title', "Hover over me" );
+ 	```
 
 
 
@@ -194,6 +207,24 @@ $('button').click(function(){
 $('#image').mouseover(function(){
         $('#image').slideUp(2000, 'linear');
 })
+```
+
+	## Binding and Unbinding
+
+If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener you can utilize the bind and unbind methods.
+
+.bind() - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
+
+```
+$('button').bind("click", function(){
+    alert("you have clicked the button");
+})
+```
+
+.unbind() - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An example is below:
+
+```
+$('button').unbind('click');
 ```
 
 ## traversing
