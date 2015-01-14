@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+#button.blue {
+  height: 200px;
+  width: 200px;
+  border: none;
+  border-radius: 50%;
+  background-color: blue;
+  color: white;
+  font-size: 2em;
+}
+#button.violet {
+  height: 200px;
+  width: 200px;
+  border: none;
+  border-radius: 50%;
+  background-color: violet;
+  color: white;
+  font-size: 2em;
+}
