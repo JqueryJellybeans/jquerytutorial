@@ -133,6 +133,36 @@ If there is a scenario where you need an element to have an event listener, and 
 
 
 
+# AJAX
+
+The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous Javascript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by Javascript code, it is asynchronous, and the rest of your code will continue to execute at the same time. 
+
+Ajax is handled differently between browsers. jQuery allows developers to get around this by offering methods such as the .ajax(), .get(), .getScript(), .getJSON(), .load(), and the like. 
+
+
+//
+One main disadvantage to AJAX is that their updates are written in Javascript. Because of this, users who's browsers do not have Javascript support will not be able to use the pages AJAX functionality. Another disadvantage to using AJAX is that the state will not register in the browser history or be indexed in major search engines. 
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
