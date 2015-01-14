@@ -6,19 +6,24 @@
 >        				- Maria
 
 
-## Background
+## background and overview
 
 jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use.
 Hence the motto of: **_Write less, do more._**
 
 It does not replace JavaScript (the code you write in jQuery is still JavaScript), but it does simplify tasks by
 writing less code.
-Here are some the important core features supported by jQuery:
 
- * DOM manipulation
- * Effects
+The great thing about jQuery is the number of plug-ins available that you can leverage.
 
-The great thing about jQuery is the number of plug-ins or libraries available that you can leverage.  
+In this tutorial, we will cover the following basic jQuery concepts:
+
+1. getting started - ways to implement in your site
+2. basics - syntax
+3. traversal - moving through your document elements
+4. events - actions that can be detected by your web app
+5. AJAX - technology that helps us load data from the server without having to refresh the page
+6. effects - jQuery methods to create visual effects
 
 ## ways to implement in your site
 1. Access the jQuery core libraries:
@@ -84,7 +89,7 @@ Document refers to your file.
 	$( 'ul li' );   // select list items that are in unordered lists
 	$( '.person' ); // select all elements with a class of 'person'
 	```
-	
+
 	You can also grab via DOM elements like children, firstBodyChild.
  In order to grab a single element:
 
@@ -94,7 +99,7 @@ Document refers to your file.
 
 
 2. Creating a new element in jQuery:
-	
+
 	```
 	$( '<p>', {					// create the element
 		html : "Hello World",	// call on html to change the innerHTML
@@ -104,7 +109,7 @@ Document refers to your file.
 
 	$( '.person' ); // select all elements with a class of 'person'
 	```
-	
+
 3. You can also grab via DOM elements like children, firstBodyChild.
  In order to grab a single element:
 
@@ -121,7 +126,7 @@ Document refers to your file.
 	var secondListItem = listItems.eq( 1 );
 	secondListItem.remove();
 	```
-	
+
 4. There are 2 types of methods:
    * Getters - methods that grab elements from the document `var first = listItems.get(0)`
    * Setters - change the selection in some way `$( "li" ).html = "examples"`
@@ -336,7 +341,7 @@ The .ajax() method is a way of creating an asynchronous http request. Make sure 
 
 
 1. jQuery lets us traverse or "move through" the html elements on our page. Let's set an example html frame:
-  
+
 
    ```
 	<body> //ancestor of all, parent of div.d01 and div.d02
@@ -357,15 +362,10 @@ The .ajax() method is a way of creating an asynchronous http request. Make sure 
   Every child element starts its index from zero, thus, div item 2 would be accessed by using $("div").eq(1) or $(".d02").
 
   You can also use the find (selector) method to find the elements.
-  
+
   ```
   	$(document).ready(function() {
   		// finds h3 elements inside all divs and adds class selected
       $("div").find("h3").addClass("selected");  
    });
    ```
-
-
-
-
-
