@@ -44,6 +44,8 @@ The great thing about jQuery is the number of plug-ins or libraries available th
  your scripts 
  
 ## basics - syntax
+
+You can write javascript inside jQuery
 	
 $ creates an object in jQuery - allows you to use the jQuery library 
 it is r
@@ -57,34 +59,79 @@ jQuery grabs items in an easier way than javascript
 	
 	element = $('li')
 	
-You can grab by html elements, classes or ids..
-
-	$( '#header' ); // select the element with an ID of 'header'
-	$( 'li' );      // select all list items on the page
-	$( 'ul li' );   // select list items that are in unordered lists
-	$( '.person' ); // select all elements with a class of 'person'	
 	
-You can also grab via DOM elements like children, firstBodyChild.
- In order to grab a single element:
- 
- 	var listItems = $( 'li' );
-	var rawListItem = listItems[0]; // or listItems.get( 0 )
-	var html = rawListItem.innerHTML;
-	
-Before starting to use jQuery you'll need to get the document ready.
+1. Before starting to use jQuery you'll need to get the document ready.
 Document refers to your file.
 
 	$(document).ready(function(){
 			do something...
 	})
 
-Creating a new element in jQuery is as easy as:
+2. You can grab by html elements, classes or ids..
 
+	$( '#nav-menu' ); // select via ID
+	$( 'li' );      // select all list items on the page
+	$( 'ul li' );   // select list items that are in unordered lists
+	$( '.person' ); // select all elements with a class of 'person'	
+3. You can also grab via DOM elements like children, firstBodyChild.
+ In order to grab a single element:
+ 	
+ 	```
+ 	var listItems = $( 'li' );
+	var rawListItem = listItems[0]; // or listItems.get( 0 )
+	var html = rawListItem.innerHTML;
+	```
+	
+  or
+  
+	```
+	var listItems = $( 'li' );
+	var secondListItem = listItems.eq( 1 );
+	secondListItem.remove();	
+	```
+4. There are 2 types of methods:
+   * Getters - methods that grab elements from the document `var first = listItems.get(0)`
+   * Setters - change the selection in some way `$( "li" ).html = "examples"`
+		*Iteration
+		
+		```
+		// grab all li and change inner HTML to string "I'm a string"
+		$( "li" ).html( "I'm a string" );
+		
+		```
+		
+
+
+4. Creating a new element in jQuery is as easy as:
+	
+	```
 	$( '<p>', {					// create the element
 		html : "Hello World",	// call on html to change the innerHTML
 		"class": "greeting",	// assign the class -- note that id 
 		"id": "my_greeting"		// assign the id 
 	); 
+	```
+
+5. One cool thing about jQuery is the ability to chain methods. For example:
+
+	```
+	 // grab li
+	 $( 'li' )									
+    // when li element is clicked
+    .click(function() {							
+    // add a class to the li called ".clicked"
+    	$( this ).addClass( 'clicked' );		
+  		})
+  	// still chained to li, now we use .find to select spans within li
+  		.find( 'span' )							
+	// set title to "Hover over me"
+    .attr( 'title', "Hover over me" );
+ 	```
+
+
+
+
+
 
 
 ## what are some popular uses
@@ -134,5 +181,50 @@ $('#moveBox').slideUp()
 
 
 ## events
+
+# Events
+
+jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event listener methods are:
+
+  * .click()
+  * .keyup()
+  * .keydown()
+  * .keypress()
+  * .scroll()
+  * .mouseenter()
+  * .mouseleave()
+  * .mouseover()
+
+The syntax for these methods are usually written as "$('element that is selected')(event type)(function);" An example is below.
+
+```
+$('button').click(function(){
+    alert('Hello World');
+})
+```
+
+```
+$('#image').mouseover(function(){
+        $('#image').slideUp(2000, 'linear');
+})
+```
+
+	## Binding and Unbinding
+
+If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener you can utilize the bind and unbind methods.
+
+.bind() - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
+
+```
+$('button').bind("click", function(){
+    alert("you have clicked the button");
+})
+```
+
+.unbind() - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An example is below:
+
+```
+$('button').unbind('click');
+```
 
 ## traversing
