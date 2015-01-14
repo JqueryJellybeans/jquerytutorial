@@ -260,16 +260,23 @@ $('button').unbind('click');
         	<h3>I'm a little string, short and stout</h3> // descendent of div.d01
       	</div>
     	<div class = "d02"> // child of body, parent of h4, sibling of d01
-    		<h4>I'm a little string too, but I don't pout</h4> // descendent of div.d02
+    		<h3>I'm a little string too, but I don't pout</h3> // descendent of div.d02
     	</div>
 	</body>
   ```
 
-2. Setting an initial selection:
+   Every div has its own index, and can be located directly by using eq(index) method as below example.
 
-	```
-	var divs = $('.d01').first()
-	var siblings = divs.siblings()
+  Every child element starts its index from zero, thus, div item 2 would be accessed by using $("div").eq(1) or $(".d02").
+
+  You can also use the find (selector) method to find the elements.
+  
+  ```
+  	$(document).ready(function() {
+  		// finds h3 elements inside all divs and adds class selected
+      $("div").find("h3").addClass("selected");  
+   });
+   ```
 
 
 
