@@ -35,7 +35,7 @@ The great thing about jQuery is the number of plug-ins or libraries available th
     
     ```
 
-   The src attribute in the <script> element must point to a copy of jQuery.
+   The src attribute in the `<script>` element must point to a copy of jQuery.
 
  ### importance of the structure
   
@@ -58,11 +58,19 @@ jQuery grabs items in an easier way than javascript
 	element = $('li')
 	
 You can grab by html elements, classes or ids..
+
 	$( '#header' ); // select the element with an ID of 'header'
 	$( 'li' );      // select all list items on the page
 	$( 'ul li' );   // select list items that are in unordered lists
 	$( '.person' ); // select all elements with a class of 'person'	
-
+	
+You can also grab via DOM elements like children, firstBodyChild.
+ In order to grab a single element:
+ 
+ 	var listItems = $( 'li' );
+	var rawListItem = listItems[0]; // or listItems.get( 0 )
+	var html = rawListItem.innerHTML;
+	
 Before starting to use jQuery you'll need to get the document ready.
 Document refers to your file.
 
