@@ -31,16 +31,51 @@ One thing to note is that all four of these methods will also run without any pa
 
 
 
+# Sliding Effects
+
 * .slideUp()
 * .slideDown()
 * .slideToggle()
-* .animate()
-* .stop()
+
+The format for these three methods can take up to three parameters, or none at all. 
+the first parameter will be the speed that the sliding effect completes at. It can be written in milliseconds, "fast" or "slow". The second parameter is the easing parameter. There are two options, "swing" and "linear". By using "swing" the sliding effect will be slow in the beginning and end, but fast in the middle. The "linear" easing will keep the sliding effect at a constant speed throughout. If there is no defined easing parameter it will slide in the "swing" motion. The third parameter is a callback function to be executed when the sliding effect is completed. An example for all three are show below. 
+
+```$('#slideMe').slideUp(2000, "linear");
+```
+```$('#slideMe').slideDown(2000, "swing");
+```
+```$('#slideMe').slideToggle();
+
+
+
+# The Animate Method
+* .animate() - jQuery comes with a very handy animate method. The method accepts up to three parameters. It will be written as .animate({parameters}, speed, [function]);. The first parameter will be a object of the changing animations. You can utilize various css values inside the curly brackets and their movements. The second parament is the speed at which the animations will take place, and the function will be executed when the effects are completed. An example is shown below:
+
+```$('#movingDiv').animate({
+	left: '250px',
+	top: '100px',
+	opacity: '0.5',
+}, 2000)
+```
+
+
+
+* .stop() - the stop method will stop the current animation as it stands. You can utilize this method if you have an animation, and provide the user a button to pause the animation. stop() can have up to two parameters, or take none at all. Both parameters are boolean values that will take true or false. The first parameter determines if you want to pause the animation or "clear the queue" and the second parameter determines if you want to jump to the end of the animation or not. These can be decided using the booleans "true" or "false"
+
+$('#movingDiv').stop(true, false);
+
+
+* .finish() - the finish method is similar to the stop method. However, it will always jump to the end of the animation. Stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements.
+
+$('#movingDiv').finish();
+
+
+
 
 you can also string together the different methods
 
 examples 
-$('#moveBox').slideUp()
+$('#moveBox').slideUp().fadeOut();
 
 
 
