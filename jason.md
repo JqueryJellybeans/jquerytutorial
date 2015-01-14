@@ -4,7 +4,7 @@ various effects - fading, sliding, animations. Much more concise to write with c
 
 * .fadeIn() - fadeIn method takes two parameters .fadeIn([duration], [function]). The duration can be written in milliseconds, or "fast" and "slow". The second parameter (function) is optional, and if used will be a callback function.  
 
-* .fadeOut() - the fadeOut method will be written the same way as the fadeIn, but has the opposite effect. The parameters it takes in are also the same. The two methods will look like this. 
+* .fadeOut() - the fadeOut method will be written the same way as the fadeIn, but has the opposite effect. The parameters it takes in are also the same. The two methods will look like this.
 
 ``` $('#divFade').fadeIn(2000)
 ```
@@ -14,12 +14,12 @@ various effects - fading, sliding, animations. Much more concise to write with c
 
 With a second parameter the code may look like
 ``` $('#divFade').fadeIn(2000, function(){
-		$('#divFade').fadeOut(2000);	
+		$('#divFade').fadeOut(2000);
 	})
 ```
 
 
-* .fadeToggle() - Luckily with the jQuery framework we also have the method fadeToggle. This is especially handy when you want a div to fade in and out. It is also written with the same parameters as the fadeIn and fadeOut methods 
+* .fadeToggle() - Luckily with the jQuery framework we also have the method fadeToggle. This is especially handy when you want a div to fade in and out. It is also written with the same parameters as the fadeIn and fadeOut methods
 ```$('#divFade').fadeToggle(2000);
 ```
 
@@ -37,8 +37,8 @@ One thing to note is that all four of these methods will also run without any pa
 * .slideDown()
 * .slideToggle()
 
-The format for these three methods can take up to three parameters, or none at all. 
-the first parameter will be the speed that the sliding effect completes at. It can be written in milliseconds, "fast" or "slow". The second parameter is the easing parameter. There are two options, "swing" and "linear". By using "swing" the sliding effect will be slow in the beginning and end, but fast in the middle. The "linear" easing will keep the sliding effect at a constant speed throughout. If there is no defined easing parameter it will slide in the "swing" motion. The third parameter is a callback function to be executed when the sliding effect is completed. An example for all three are show below. 
+The format for these three methods can take up to three parameters, or none at all.
+the first parameter will be the speed that the sliding effect completes at. It can be written in milliseconds, "fast" or "slow". The second parameter is the easing parameter. There are two options, "swing" and "linear". By using "swing" the sliding effect will be slow in the beginning and end, but fast in the middle. The "linear" easing will keep the sliding effect at a constant speed throughout. If there is no defined easing parameter it will slide in the "swing" motion. The third parameter is a callback function to be executed when the sliding effect is completed. An example for all three are show below.
 
 ```$('#slideMe').slideUp(2000, "linear");
 ```
@@ -74,7 +74,7 @@ $('#movingDiv').finish();
 
 you can also string together the different methods
 
-examples 
+examples
 $('#moveBox').slideUp().fadeOut();
 
 
@@ -95,7 +95,7 @@ jQuery allows you, the developer, to write code easily for users to interact wit
 * .mouseleave()
 * .mouseover()
 
-The syntax for these methods are usually written as "$('element that is selected')(event type)(function);" An example is below. 
+The syntax for these methods are usually written as "$('element that is selected')(event type)(function);" An example is below.
 
 ```$('button').click(function(){
 	alert('Hello World');
@@ -116,7 +116,7 @@ The syntax for these methods are usually written as "$('element that is selected
 
 ## Binding and Unbinding
 
-If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener you can utilize the bind and unbind methods. 
+If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener you can utilize the bind and unbind methods.
 
 .bind() - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
 
@@ -135,12 +135,17 @@ If there is a scenario where you need an element to have an event listener, and 
 
 # AJAX
 
-The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous Javascript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by Javascript code, it is asynchronous, and the rest of your code will continue to execute at the same time. 
+The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous Javascript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by Javascript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
 
+<<<<<<< HEAD
 Ajax is handled differently between browsers. jQuery allows developers to get around this by offering the main method .ajax(), along with other convenience methods such as .get(), .load(), and the like.
+=======
+Ajax is handled differently between browsers. jQuery allows developers to get around this by offering methods such as the .ajax(), .get(), .getScript(), .getJSON(), .load(), and the like.
+>>>>>>> ba446ea42055ea4212df56d5fb071bfa13236a17
 
 The .ajax() method is a way of creating an asynchronous http request. Make sure that the data received from the server is in the format that you requested; if not your code may fail. The .ajax() method is written as so: jQuery.ajax(url[settings]). There are a plethora of settings developers can input when using the method. For a full list of these settings, and their parameters you can visit http://api.jquery.com/jQuery.ajax/. One example of this methods utilization is:
 
+<<<<<<< HEAD
 ```$.ajax({
 	statusCode: {
 		404: function() {
@@ -182,3 +187,8 @@ The .ajax() method is a way of creating an asynchronous http request. Make sure 
 
 
 
+=======
+//
+One main disadvantage to AJAX is that their updates are written in Javascript. Because of this, users who's browsers do not have Javascript support will not be able to use the pages AJAX functionality. Another disadvantage to using AJAX is that the state will not register in the browser history or be indexed in major search engines.
+//
+>>>>>>> ba446ea42055ea4212df56d5fb071bfa13236a17
