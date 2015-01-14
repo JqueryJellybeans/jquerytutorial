@@ -78,7 +78,13 @@ Document refers to your file.
 			do something...
 	})
 
+Creating a new element in jQuery is as easy as:
 
+	$( '<p>', {					// create the element
+		html : "Hello World",	// call on html to change the innerHTML
+		"class": "greeting",	// assign the class -- note that id 
+		"id": "my_greeting"		// assign the id 
+	); 
 
 
 ## what are some popular uses
