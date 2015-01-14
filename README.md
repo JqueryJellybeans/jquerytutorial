@@ -57,34 +57,53 @@ jQuery grabs items in an easier way than javascript
 	
 	element = $('li')
 	
-You can grab by html elements, classes or ids..
-
-	$( '#header' ); // select the element with an ID of 'header'
-	$( 'li' );      // select all list items on the page
-	$( 'ul li' );   // select list items that are in unordered lists
-	$( '.person' ); // select all elements with a class of 'person'	
 	
-You can also grab via DOM elements like children, firstBodyChild.
- In order to grab a single element:
- 
- 	var listItems = $( 'li' );
-	var rawListItem = listItems[0]; // or listItems.get( 0 )
-	var html = rawListItem.innerHTML;
-	
-Before starting to use jQuery you'll need to get the document ready.
+1. Before starting to use jQuery you'll need to get the document ready.
 Document refers to your file.
 
 	$(document).ready(function(){
 			do something...
 	})
 
-Creating a new element in jQuery is as easy as:
+2. You can grab by html elements, classes or ids..
 
+	$( '#nav-menu' ); // select via ID
+	$( 'li' );      // select all list items on the page
+	$( 'ul li' );   // select list items that are in unordered lists
+	$( '.person' ); // select all elements with a class of 'person'	
+3. You can also grab via DOM elements like children, firstBodyChild.
+ In order to grab a single element:
+ 	
+ 	```
+ 	var listItems = $( 'li' );
+	var rawListItem = listItems[0]; // or listItems.get( 0 )
+	var html = rawListItem.innerHTML;
+	```
+	
+  or
+  
+	```
+	var listItems = $( 'li' );
+	var secondListItem = listItems.eq( 1 );
+	secondListItem.remove();	
+	```
+
+4. Creating a new element in jQuery is as easy as:
+	
+	```
 	$( '<p>', {					// create the element
 		html : "Hello World",	// call on html to change the innerHTML
 		"class": "greeting",	// assign the class -- note that id 
 		"id": "my_greeting"		// assign the id 
 	); 
+	```
+
+
+
+
+
+
+
 
 
 ## what are some popular uses
