@@ -169,4 +169,31 @@ $('#moveBox').slideUp()
 
 ## events
 
+# Events
+
+jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event listener methods are:
+
+  * .click()
+  * .keyup()
+  * .keydown()
+  * .keypress()
+  * .scroll()
+  * .mouseenter()
+  * .mouseleave()
+  * .mouseover()
+
+The syntax for these methods are usually written as "$('element that is selected')(event type)(function);" An example is below.
+
+```
+$('button').click(function(){
+    alert('Hello World');
+})
+```
+
+```
+$('#image').mouseover(function(){
+        $('#image').slideUp(2000, 'linear');
+})
+```
+
 ## traversing
