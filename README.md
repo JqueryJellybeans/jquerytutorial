@@ -44,6 +44,8 @@ The great thing about jQuery is the number of plug-ins or libraries available th
  your scripts 
  
 ## basics - syntax
+
+You can write javascript inside jQuery
 	
 $ creates an object in jQuery - allows you to use the jQuery library 
 it is r
@@ -87,6 +89,18 @@ Document refers to your file.
 	var secondListItem = listItems.eq( 1 );
 	secondListItem.remove();	
 	```
+4. There are 2 types of methods:
+   * Getters - methods that grab elements from the document `var first = listItems.get(0)`
+   * Setters - change the selection in some way `$( "li" ).html = "examples"`
+		*Iteration
+		
+		```
+		// grab all li and change inner HTML to string "I'm a string"
+		$( "li" ).html( "I'm a string" );
+		
+		```
+		
+
 
 4. Creating a new element in jQuery is as easy as:
 	
@@ -98,6 +112,7 @@ Document refers to your file.
 	); 
 	```
 
+5. 
 
 
 
