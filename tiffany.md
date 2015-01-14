@@ -1,9 +1,9 @@
 ###Links
 
-Here are some examples of plugins that use jQuery to build powerful effects. 
+Here are some examples of plugins that use jQuery to build powerful effects.
 
 [ScrollMagic](http://janpaepke.github.io/ScrollMagic/)  
-Scroll Magic is a plugin that allows you to render multiple effects while scrolling down a page. 
+Scroll Magic is a plugin that allows you to render multiple effects while scrolling down a page.
 
 [oriDomi](http://oridomi.com/)  
 This plugin allows you to crumple an image on the screen like a piece of paper.
