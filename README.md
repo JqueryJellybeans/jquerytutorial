@@ -198,15 +198,15 @@ jQuery lets us traverse or "move through" the html elements on our page.
  Let's set an example html frame:
 
 ```html
-<body> 						// ancestor of all, parent of div.d01, div.d02 and div.d03
-	<div class = "d01">  		    	// child of body, parent of h3, sibling of d02 and d03
-    	<h3>I'm a little string, short and stout</h3> 			  // descendent of div.d01
+<body> 							// ancestor of all, parent of div.d01, div.d02 and div.d03
+	<div class = "d01">  		    		    // child of body, parent of h3, sibling of d02 and d03
+    	<h3>I'm a little string, short and stout</h3> 		  	  		  // descendent of div.d01
 	</div>
-	<div class = "d02"> 		    	// child of body, parent of h3, sibling of d01 and d03
-  		<h3>I'm a little string too, but I don't pout</h3> 	  // descendent of div.d02
+	<div class = "d02"	 		    	    // child of body, parent of h3, sibling of d01 and d03
+  		<h3>I'm a little string too, but I don't pout</h3> 	                  // descendent of div.d02
 	</div>
-	<div class = "d03"> 			// child of body, parent of h3, sibling of d01 and d02
-		  <h3> The End </h3> 					//descendent of div.d03
+	<div class = "d03"	 			    // child of body, parent of h3, sibling of d01 and d02
+		  <h3> The End </h3> 							   //descendent of div.d03
 	</div>
 </body>
   ```
@@ -247,24 +247,23 @@ $("div").eq(1)		// remember that indexes start from 0 so that is div.d02
    	```
 4. The filter(selector) method allows to... filter out elements!
 
-	```html
+```html
 	<script type="text/javascript" language="javascript">    //it's just Javascript!
-   	$(document).ready(function() {
+   		$(document).ready(function() {
    		// get all divs, filter the bottom class and add class "selected" to them
-      $("div").filter(".bottom").addClass("selected");  
-   	});
+      	$("div").filter(".bottom").addClass("selected");  
+   		});
    	</script>
 	<style>
-      .selected { background-color:blue; }  
-      // now you can change the color of the div with a toggle!
+      	.selected { background-color:blue; }  	// now you can change the color of the div with a toggle!
    	</style>
 	</head>
 	<body>
-     <div class="top">list item 1</div>
-     <div class="middle">list item 3</div>
-     <div class="bottom">list item 5</div>
-   </body>
-   </html>
+     		<div class="top">list item 1</div>
+     		<div class="middle">list item 3</div>
+     		<div class="bottom">list item 5</div>
+   	</body>
+   	</html>
    ```
 
 
