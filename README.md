@@ -11,10 +11,10 @@ Contributers:
 | [**Jason**](https://github.com/Jingo88)
 | [**Rachel**](https://github.com/r-a-c-h-e-l)
 | [**Tiffany**](https://github.com/tiffanyposs)
+***
 
----
 >"jQuery ... it's just JavaScript..." <br>
->        				- Wise Words
+       				- Wise Words
 
 
 ## Background and Overview
@@ -37,9 +37,9 @@ In this tutorial, we will cover the following basic jQuery concepts:
 4. [**Events**](#anchor4) - actions that can be detected by your web app
 5. [**AJAX**](#anchor5) - cross browser integration through jQuery
 6. [**Effects**](#anchor6) - jQuery methods to create visual effects
-7. [**Plug-ins**](#anchor7) - JS code files that provide useful jQuery methods which can be used along with jQuery library methods.
+7. [**Plug-ins**](#anchor7) - JS files that provide useful jQuery methods which can be used along the jQuery core library
 
-## [Getting Started](name:anchor1) 
+<h2 id="anchor1">Getting Started</h2>
 ---
 
 In order to get started with jQuery you have a couple options to access the jQuery core library.
@@ -75,7 +75,7 @@ In order to get started with jQuery you have a couple options to access the jQue
     ```
 
 
-## [Basics](name:anchor2) 
+<h2 id="anchor2">Basics</h2>
 ---
 Assuming the reader knows Javascript you'll find striking similarities between the two. That's because jQuery is just a slightly different way to write Javascript. 
 
@@ -180,7 +180,7 @@ More examples [here](http://youmightnotneedjquery.com/)!
     .attr( 'title', "Hover over me" );			// set title to "Hover over me"
  	```
 
-## [Traversal](name:anchor3)
+<h2 id="anchor3">Traversal</h2>
 ---
 jQuery lets us traverse or "move through" the html elements on our page. 
 
@@ -262,7 +262,7 @@ jQuery lets us traverse or "move through" the html elements on our page.
 
 ---	
 
-## [Events](id:anchor4)
+<h2 id="anchor3">Events</h2>
 ---
 
 jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
@@ -312,7 +312,7 @@ If there is a scenario where you need an element to have an event listener, and 
 	```
 
 
-## [AJAX & jQuery](id:anchor5)
+<h2 id="anchor3">AJAX & jQuery</h2>
 ---
 
 The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous JavaScript and XML allows the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by JavaScript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
@@ -338,7 +338,7 @@ You can also bind Ajax events to elements in the same fashion you would bind oth
 One thing to note is that Ajax does not work with all domains. For this issues we can use the .jsonp() method (JSON with Padding). This uses script tags to load files with other JS and JSON content from another domain. Browsers have begun to implement a new technology called CORS(Cross Origin Resource Sharing), which allows Ajax request to different domains.
 
 
-## [Effects](id:anchor6)
+<h2 id="anchor3">Effects</h2>
 ---
 
 #### Fading Effects
@@ -436,7 +436,7 @@ The format for these three methods can take up to three parameters, or none at a
 	$('#movingDiv').finish();
 	```
 
-## [Plugins](id:anchor7)
+<h2 id="anchor3">Plug-ins</h2>
 ---
 ###Links
 
@@ -465,3 +465,6 @@ This allows you to add video backgrounds to your page.
 ![](img/parallax.png)
 ###[parallax.js](http://matthew.wagerfield.com/parallax/)  
 Parallax.js allows you to create depth and motion to your site that reacts to cursor and smart device movement. Check it out!
+
+###[jQuery Plug-ins](http://plugins.jquery.com/)
+###[NPM jQuery Plug-ins](https://www.npmjs.com/browse/keyword/jquery-plugin)
