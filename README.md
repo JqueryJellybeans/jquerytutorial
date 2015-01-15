@@ -14,7 +14,7 @@ Contributers:
 
 
 >"jQuery ... it's just JavaScript..." <br>
->  - Maria
+> -Maria
 
 
 ## Background and Overview
