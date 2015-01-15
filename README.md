@@ -182,6 +182,8 @@ $( this ).addClass( 'clicked' );    	// add a class to the li called ".clicked"
 
 <h3 id = "ex1" >Excercise 1</h2>
 ---
+[Clone this linked repo for ease](https://github.com/JqueryJellybeans/jqueryExcercises)
+
 ####[Toggle demo](https://github.com/JqueryJellybeans/jquerytutorial/tree/master/examples/toggleExample/v1.html)
 
 ---
@@ -453,33 +455,8 @@ You can also bind Ajax events to elements in the same fashion you would bind oth
 
 One thing to note is that Ajax does not work with all domains. For this issues we can use the .jsonp() method (JSON with Padding). This uses script tags to load files with other JS and JSON content from another domain. Browsers have begun to implement a new technology called CORS(Cross Origin Resource Sharing), which allows Ajax request to different domains.
 
-
-
-<h2 id="anchor5">AJAX & jQuery</h2>
 ---
-
-The days of refreshing a webpage to load content are over. AJAX, short for Asynchronous JavaScript and XML, are techniques that allows the user to retrieve data from a targeted server and load it to your webpage. Since the Ajax requests are triggered by JavaScript code, it is asynchronous, and the rest of the code on the webpage will continue to execute at the same time.
-
-Due to Ajax being updated through javascript, it is handled differently between browsers. jQuery allows developers to get around this by offering the main method .ajax(), and various convenience methods such as .get(), .jsonp(), and .load() to name a few.
-
-The .ajax() method is the most common way of creating an asynchronous http request. The .ajax() method is written as so: `jQuery.ajax(url[settings])`. There are a plethora of settings developers can input when using the method. The .load() method will load a file from the targeted url and populate it inside a div. The .getJSON() method will retrieve data in the form of a parsed JSON object. For a full list of these settings, and their parameters you can go [here](http://api.jquery.com/jQuery.ajax/). One example of this methods utilization is:
-
-```js
-$.ajax({
-	statusCode: {
-		404: function() {
-			alert("sorry the page was not found");
-		}
-	}
-});
-```
-
-One thing to note is to Make sure that the data received from the server is in the format that you requested; if not your code may fail. When making an Ajax request two common methods are GET and POST. GET is used for operations that is only getting data from the server, but not changing data on the server. POST is used for operations that will change data on the server. For example, a client editing a blog post. 
-
-You can also bind Ajax events to elements in the same fashion you would bind other events. You may want to use this if you ever find yourself needing to start or stop an operation whenever an Ajax request is called. Check out [AJAX Events](http://api.jquery.com/Ajax_Events/) for more documentation about the various event triggers.
-
-As mentioned earlier Ajax may not work the same across all domains. For this issue we can use the .jsonp() method (JSON with Padding). This uses script tags to load files with other JS and JSON content from another domain. Browsers have begun to implement a new technology called CORS(Cross Origin Resource Sharing), which allows Ajax request to different domains.
-
+---
 
 <h2 id="anchor7">Plug-ins</h2>
 ---
