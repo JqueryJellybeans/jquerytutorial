@@ -225,7 +225,7 @@ jQuery lets us traverse or "move through" the html elements on our page.
 
 	
 2. Every div has its own index, and can be located directly by using `eq(index)` method. For example: 
-
+3. 3. 
 	```
 	$("div").eq(1)		// remember that indexes start from 0 so that is div.d02
 	```
@@ -263,6 +263,7 @@ jQuery lets us traverse or "move through" the html elements on our page.
 
 ## [Events](id:anchor4)
 ---
+
 jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
 
 * `.click()`
@@ -290,33 +291,27 @@ The syntax for these methods are usually written as "$('element that is selected
 			alert("you pressed enter");
 		}
 		})
-	
 
-### Binding and Unbinding
+#### Binding and Unbinding
+***
 
 If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener, you can utilize the bind and unbind methods.
 
-`.bind()` - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
+1. `.bind()` - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
 
 	```
-		$('button').bind("click", function(){
-			alert("you have clicked the button");
-		})
+	$('button').bind("click", function(){
+		alert("you have clicked the button");
+	})
+	```
+2. `.unbind()` - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An example is below:
 
 	```
-
-`.unbind()` - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An example is below:
-
-	```
-	
 	$('button').unbind('click');
-	
 	```
 
 
-
-
-### AJAX & jQuery
+## [AJAX & jQuery](id:anchor5)
 ---
 
 The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous JavaScript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by JavaScript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
