@@ -1,12 +1,17 @@
-=======
+
 #jQuery Tutorial
-===
+---
+We worked on this as a group project while teaching ourselves jQuery.
 
->"jQuery ... it's just JavaScript" <br>
+Contributers:
+
+[David](https://github.com/DavideDaniel)
+| [Ciara](https://github.com/mderisse) 
+| [Tiffany](https://github.com/kyle1980)
+| [Trey](https://github.com/jacksrf)
+
+>"jQuery ... it's just JavaScript..." <br>
 >        				- Maria
-
-
-
 
 
 ## Background and Overview
@@ -26,7 +31,7 @@ In this tutorial, we will cover the following basic jQuery concepts:
 2. **Basics** - syntactical overview
 3. **Traversal** - moving through your document elements
 4. **Events** - actions that can be detected by your web app
-5. **AJAX** - technology that helps us load data from the server without having to refresh the page
+5. **AJAX** - cross browser integration through jQuery
 6. **Effects** - jQuery methods to create visual effects
 7. **Plug-ins** - JS code files that provide useful jQuery methods which can be used along with jQuery library methods.
 
@@ -238,7 +243,7 @@ If there is a scenario where you need an element to have an event listener, and 
 
 
 
-## AJAX
+### AJAX & jQuery
 ---
 
 The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous JavaScript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by JavaScript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
@@ -258,6 +263,12 @@ $.ajax({
 	}
 });
 ```
+
+When making an Ajax request two common methods are GET and POST. GET is used for operations that is only getting data from the server, but not changing data on the server. POST is used for operations that will change data on the server. E.g. a client editing a blog post. Along with the .ajax() method in the jQuery Ajax, we also have the .load() method. This is written like (selector).load(url, data, callback).
+
+You can also bind Ajax events to elements in the same fashion you would bind other events. You may want to use this if you ever find yourself needing to start or stop an operation whenever an Ajax request is called. Visit http://api.jquery.com/Ajax_Events/ for more documentation about the various event triggers.
+
+One thing to note is that Ajax does not work with all domains. For this issues we can use the .jsonp() method (JSON with Padding). This uses script tags to load files with other JS and JSON content from another domain. Browsers have begun to implement a new technology called CORS(Cross Origin Resource Sharing), which allows Ajax request to different domains.
 
 
 ## Effects
