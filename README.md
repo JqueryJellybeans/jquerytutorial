@@ -68,10 +68,10 @@ In order to get started with jQuery you have a couple options to access the jQue
 
    For example, here we link the core library, then plug-ins, and finally our scripts.
 
-    ```js
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="jquery-scrollto.js"></script>
-    <script src="scroll.js"></script>
+```js
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="jquery-scrollto.js"></script>
+<script src="scroll.js"></script>
     ```
 
 
@@ -85,19 +85,20 @@ Assuming the reader knows Javascript you'll find striking similarities between t
    What is $ ?
    Buried in the core jQuery code you'll find this:
 
-   ```js
-   window.jQuery = window.$ = jQuery;
+```js
+window.jQuery = window.$ = jQuery;
    ```
 
    The jQuery library basically provides the function `jQuery` which as shown above allows `$` to be used as a shorter way to just call the function. Because functions are objects, `$` then has properties and methods which we'll see further through the tutorial.
 
 For example, in order to safely manipulate a page, you will use the `.ready` function.
 
-   ```js
-	$( document ).ready(function() { 	// This ensures the code inside will only run once
-    	console.log( "Ready" );			// the page DOM is ready
+```js
+$( document ).ready(function() { 	// This ensures the code inside will only run once
+    console.log( "Ready" );			// the page DOM is ready
 	});
-
+```
+```js
 	$(function() {					 // Same thing but not very clear.. why? It's just jQuery!
   		console.log( 'Ready' );		 // but for real, it's adhering to the principle of writing
 	});								 // less
@@ -123,61 +124,59 @@ More examples [here](http://youmightnotneedjquery.com/)!
 1. You can grab by html elements, classes or ids.
 
 	```js
-	$( "#nav-menu" ); // select via ID
-	$( "div" );      // select all div items on the page
-	$( "div p" );   // select p items that are inside div
-	$( ".name" ); // select all elements with a class of "name"
+$( "#nav-menu" ); // select via ID
+$( "div" );      // select all div items on the page
+$( "div p" );   // select p items that are inside div
+$( ".name" ); // select all elements with a class of "name"
 	```
 
 2. You can also grab via DOM elements like children & firstBodyChild. In order to grab a single element:
 
 	```js
- 	var listItems = $( 'li' );
-	var rawListItem = listItems[0]; // or listItems.get( 0 )
-	var html = rawListItem.innerHTML;
+var listItems = $( 'li' );
+var rawListItem = listItems[0]; // or listItems.get( 0 )
+var html = rawListItem.innerHTML;
 	```
 	 or
 
 	```js
-	var listItems = $( 'li' );
-	var secondListItem = listItems.eq( 1 );
-	secondListItem.remove();
+var listItems = $( 'li' );
+var secondListItem = listItems.eq( 1 );
+secondListItem.remove();
 	```
 
 3. Example of creating a new element in jQuery:
 
-	```js
-	$( "<p>", {					// create the element
-		html : "Hello World",	// call on html to change the innerHTML
-		"class": "greeting",	// assign the class -- note that class & id go in quotes
-		"id": "my_greeting"		// assign the id
-	);
+  ```js
+  $( "<p>", {				// create the element
+  html : "Hello World",	  // call on html to change the  innerHTML
+  "class": "greeting",	   // assign the class -- note that class & id go in quotes
+  "id": "my_greeting"	    // assign the id
+  );
 
-	$( ".name" ); 			// select all elements with a class of 'name'
+  $( ".name" ); 			// select all elements with a class of 'name'
 	```
 
 4. There are 2 types of methods:
    * Getters - methods that grab elements from the document `var first = listItems.get(0)`
    * Setters - change the selection in some way `$( "li" ).html = "examples"`
 
-
 5. Iterating through the elements
 
 	```js
-	// grab all li and change inner HTML to string "I'm a string"
-	$( "li" ).html( "I'm a string" );
+// grab all li and change inner HTML to string "I'm a string"
+$( "li" ).html( "I'm a string" );
 	```
 
 6. One cool thing about jQuery is the ability to chain methods. For example:
 
 	```js
-
-	 $( 'li' )	 								// grab li
-    .click(function() {    						// when li element is clicked
-    	$( this ).addClass( 'clicked' );    	// add a class to the li called ".clicked"
-  		})
-  	.find( 'span' )							    // use .find method to select spans within li
-    .attr( 'title', "Hover over me" );			// set title to "Hover over me"
+$( 'li' )	 								// grab li
+  .click(function() {    						// when li element is clicked
+$( this ).addClass( 'clicked' );    	// add a class to the li called ".clicked"
+	})
+.find( 'span' )							    // use .find method to select spans within li
+.attr( 'title', "Hover over me" );			// set title to "Hover over me"
  	```
 
 <h2 id="anchor3">Traversal</h2>
@@ -188,18 +187,18 @@ jQuery lets us traverse or "move through" the html elements on our page.
 ***
  Let's set an example html frame:
 
-   ```html
-	<body> 		// ancestor of all, parent of div.d01, div.d02 and div.d03
-    	<div class = "d01">  // child of body, parent of h3, sibling of d02 and d03
-        	<h3>I'm a little string, short and stout</h3> // descendent of div.d01
-      	</div>
-    	<div class = "d02"> // child of body, parent of h3, sibling of d01 and d03
-    		<h3>I'm a little string too, but I don't pout</h3> // descendent of div.d02
-    	</div>
-    	<div class = "d03"> // child of body, parent of h3, sibling of d01 and d02
-    		<h3> The End </h3> 	//descendent of div.d03
-    	</div>
-	</body>
+```html
+<body> 		// ancestor of all, parent of div.d01, div.d02 and div.d03
+	<div class = "d01">  // child of body, parent of h3, sibling of d02 and d03
+    	<h3>I'm a little string, short and stout</h3> // descendent of div.d01
+	</div>
+	<div class = "d02"> // child of body, parent of h3, sibling of d01 and d03
+  		<h3>I'm a little string too, but I don't pout</h3> // descendent of div.d02
+	</div>
+	<div class = "d03"> // child of body, parent of h3, sibling of d01 and d02
+		  <h3> The End </h3> 	//descendent of div.d03
+	</div>
+</body>
   ```
 
 1. You can find elements relative to a selection. Some examples are:
@@ -225,15 +224,15 @@ jQuery lets us traverse or "move through" the html elements on our page.
 	```
 2. Every div has its own index, and can be located directly by using `eq(index)` method. For example:
 
-	```js
-	$("div").eq(1)		// remember that indexes start from 0 so that is div.d02
+  ```js
+$("div").eq(1)		// remember that indexes start from 0 so that is div.d02
 	```
 
 3. You can also use the find (selector) method to find the elements.
 
   	```js
-    // This says find all p elements inside all divs and add class "selected"
-    $("div").find("p").addClass("selected");  
+ // This says find all p elements inside all divs and add class "selected"
+ $("div").find("p").addClass("selected");  
 
    	```
 4. The filter(selector) method allows to... filter out elements!
