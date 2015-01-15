@@ -95,14 +95,14 @@ window.jQuery = window.$ = jQuery;
 For example, in order to safely manipulate a page, you will use the `.ready` function.
 
 ```js
-$( document ).ready(function() { 	// This ensures the code inside will only run once
+$( document ).ready(function() { 	 	// This ensures the code inside will only run once
     console.log( "Ready" );			// the page DOM is ready
 	});
 ```
 ```js
-	$(function() {					 // Same thing but not very clear.. why? It's just jQuery!
-  		console.log( 'Ready' );		 // but for real, it's adhering to the principle of writing
-	});								 // less
+	$(function() {				 // Same thing but not very clear.. why? It's just jQuery!
+  		console.log( 'Ready' );		 // but for real, it's adhering to the principle of writing less
+	});					 
    ```
 
 
