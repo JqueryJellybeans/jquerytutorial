@@ -9,7 +9,7 @@
 
 
 
-## background and overview
+## Background and Overview
 ---
 jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use, hence the motto: **_Write less, do more._**
 
@@ -260,7 +260,7 @@ $.ajax({
 ```
 
 
-# Effects
+## Effects
 ---
 
 ### Fading Effects
