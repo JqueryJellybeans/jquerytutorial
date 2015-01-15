@@ -5,11 +5,13 @@ We worked on this as a group project while teaching ourselves jQuery.
 
 Contributers:
 
-[David](https://github.com/DavideDaniel)
-| [Ciara](https://github.com/mderisse) 
-| [Tiffany](https://github.com/kyle1980)
-| [Trey](https://github.com/jacksrf)
+[Ciara](https://github.com/cfo613) 
+| [David](https://github.com/DavideDaniel)
+| [Jason](https://github.com/Jingo88)
+| [Rachel](https://github.com/r-a-c-h-e-l)
+| [Tiffany](https://github.com/tiffanyposs)
 
+---
 >"jQuery ... it's just JavaScript..." <br>
 >        				- Maria
 
@@ -40,7 +42,7 @@ In this tutorial, we will cover the following basic jQuery concepts:
 
 1. Access the jQuery core libraries:
    * there are a few ways to do this. You can download the compressed and uncompressed files. jQuery has opinions on which files are better for which purposes.
-   You can find out more about that here: [jQuery downloads] (http://jquery.com/download/).
+   You can find out more about that here: [jQuery downloads](http://jquery.com/download/).
    * CDN
 1. Link to jQuery library through your HTML file:
    * First you want to link to the jQuery core library through a script tag in your HTML file.
@@ -64,10 +66,13 @@ In this tutorial, we will cover the following basic jQuery concepts:
 ## Basics - syntactical overview
 ---
 
-$ creates an object in jQuery - allows you to use the jQuery library
+
+   So what is $ ?
+   
+   $ creates an object in jQuery - allows you to use the jQuery library
 
 
-The jQuery syntax is made for selecting HTML elements and performing actions on html elements.
+   The jQuery syntax is made for selecting HTML elements and performing actions on html elements.
 
 Basic syntax is: $(selector).action()
 
@@ -82,11 +87,11 @@ jQuery grabs items in an easier way than JavaScript
 	element = $('li')
 
 
-1. Before starting to use jQuery you'll need to get the document ready.
+1. Before starting to use jQuery you will need to get the document ready.
 Document refers to your file.
 
-	```
-	$(document).ready(function(){
+	```javascript
+		$(document).ready(function(){
 			do something...
 	})
 	```
@@ -142,17 +147,13 @@ Document refers to your file.
 6. One cool thing about jQuery is the ability to chain methods. For example:
 
 	```
-	 // grab li
-	 $( 'li' )
-    // when li element is clicked
-    .click(function() {
-    // add a class to the li called ".clicked"
-    	$( this ).addClass( 'clicked' );
+	 
+	 $( 'li' )	 								// grab li
+    .click(function() {    						// when li element is clicked
+    	$( this ).addClass( 'clicked' );    	// add a class to the li called ".clicked"
   		})
-  	// still chained to li, now we use .find to select spans within li
-  		.find( 'span' )
-	// set title to "Hover over me"
-    .attr( 'title', "Hover over me" );
+  	.find( 'span' )							    // use .find method to select spans within li
+    .attr( 'title', "Hover over me" );			// set title to "Hover over me"
  	```
 
 ## Traversal - moving through your document elements
