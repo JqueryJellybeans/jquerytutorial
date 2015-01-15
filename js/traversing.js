@@ -11,7 +11,7 @@ var nextSibling = divs.next(); // also: .prev()
 var divElem = divs.parent();
 
 // get the list items that are immediate children of the list
-var listItems = divElem.children();
+var divItems = divElem.children();
 
 // get ALL list items in the list, including nested ones
 var allListItems = divElem.find( '.div01' );
