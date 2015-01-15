@@ -189,32 +189,79 @@ jQuery lets us traverse or "move through" the html elements on our page.
 
 
    ```
-	<body> 		//ancestor of all, parent of div.d01 and div.d02
-    	<div class = "d01">  // child of body, parent of h3, sibling of d02
+	<body> 		// ancestor of all, parent of div.d01, div.d02 and div.d03
+    	<div class = "d01">  // child of body, parent of h3, sibling of d02 and d03
         	<h3>I'm a little string, short and stout</h3> // descendent of div.d01
       	</div>
-    	<div class = "d02"> // child of body, parent of h4, sibling of d01
+    	<div class = "d02"> // child of body, parent of h3, sibling of d01 and d03
     		<h3>I'm a little string too, but I don't pout</h3> // descendent of div.d02
+    	</div>
+    	<div class = "d03"> // child of body, parent of h3, sibling of d01 and d02
+    		<h3> The End </h3> 	//descendent of div.d03
     	</div>
 	</body>
   ```
+	You can find elements relative to a selection. Some examples are:
+	
+	```
+	// get the first div on the page
+	var firstDiv = $( 'div' ).first(); // you can also use .last() to pick the last
 
-2. Every div has its own index, and can be located directly by using `eq(index)` method, as in the following example: 
+	// get the siblings 
+	var siblings = firstDiv.siblings();
 
-	Setting an initial selection:
+	// get the next sibling
+	var nextSibling = firstDiv.next(); // you can also use .prev() to pick the previous
 
-  	Every child element starts its index from zero, thus, div item 2 would be accessed by using $("div").eq(1) or $(".d02").
+	// get the parent
+	var body = firstDiv.parent();
 
-  	You can also use the find (selector) method to find the elements.
+	// get the elements that are immediate children
+	var divs = body.children();
+
+	// get ALL h3s on the page
+	var allh3s = body.find( 'h3' );
+	```
+
+	
+2. Every div has its own index, and can be located directly by using `eq(index)` method. For example: 
+
+	```
+	$("div").eq(1)		// remember that indexes start from 0 so that is div.d02
+	```
+
+3. You can also use the find (selector) method to find the elements.
 
   	```
-  		$(document).ready(function() {
-  			// finds h3 elements inside all divs and adds class selected
-      	$("div").find("h3").addClass("selected");  
-   		});
+    // This says find all p elements inside all divs and add class "selected"
+    $("div").find("p").addClass("selected");  
+    
    	```
+4. The filter(selector) method allows to... filter out elements!
 
-## Events
+	```
+	<script type="text/javascript" language="javascript">    //it's just Javascript!
+   	$(document).ready(function() {
+   		// get all divs, filter the bottom class and add class "selected" to them
+      $("div").filter(".bottom").addClass("selected");  
+   	});
+   	</script>
+	<style>
+      .selected { background-color:blue; }  
+      // now you can change the color of the div with a toggle!
+   	</style>
+	</head>
+	<body>
+     <div class="top">list item 1</div>
+     <div class="middle">list item 3</div>
+     <div class="bottom">list item 5</div>
+   ```
+   
+   Read on to learn about toggling!
+
+---	
+
+## [Events](id:anchor4)
 ---
 jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
 
