@@ -83,7 +83,7 @@ Assuming the reader knows Javascript you'll find striking similarities between t
 #####Syntactical overview
 ***
 
-   What is $ ?
+   What is `$` ?
    Buried in the core jQuery code you'll find this:
 
 ```js
