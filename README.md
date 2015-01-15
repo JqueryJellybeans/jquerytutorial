@@ -263,7 +263,7 @@ $("div").eq(1)		// remember that indexes start from 0 so that is div.d02
 
 ---
 
-<h2 id="anchor3">Events</h2>
+<h2 id="anchor4">Events</h2>
 ---
 
 jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
@@ -315,7 +315,7 @@ If there is a scenario where you need an element to have an event listener, and 
 	```
 
 
-<h2 id="anchor3">AJAX & jQuery</h2>
+<h2 id="anchor5">AJAX & jQuery</h2>
 ---
 
 The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous JavaScript and XML allows the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by JavaScript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
@@ -341,7 +341,7 @@ You can also bind Ajax events to elements in the same fashion you would bind oth
 One thing to note is that Ajax does not work with all domains. For this issues we can use the .jsonp() method (JSON with Padding). This uses script tags to load files with other JS and JSON content from another domain. Browsers have begun to implement a new technology called CORS(Cross Origin Resource Sharing), which allows Ajax request to different domains.
 
 
-<h2 id="anchor3">Effects</h2>
+<h2 id="anchor6">Effects</h2>
 ---
 
 #### Fading Effects
@@ -438,6 +438,14 @@ The format for these three methods can take up to three parameters, or none at a
 	```js
 	$('#movingDiv').finish();
 	```
+
+##Excercises & Examples
+
+  1. [Scroll Excercise](https://github.com/JqueryJellybeans/jquerytutorial/tree/master/examples/scroll/scroll.html)
+  2. [Toggle demo](https://github.com/JqueryJellybeans/jquerytutorial/tree/master/examples/toggleExample/v1.html)
+  3. [Parallax demo](https://github.com/JqueryJellybeans/jquerytutorial/tree/master/examples/parallax/test.html)
+
+
 
 <h2 id="anchor3">Plug-ins</h2>
 ---
