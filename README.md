@@ -2,14 +2,15 @@
 #jQuery Tutorial
 ---
 We worked on this as a group project while teaching ourselves jQuery.
+Please note that we assume you have basic knowledge of vanilla JavaScript.
 
 Contributers:
 
-[Ciara](https://github.com/cfo613) 
-| [David](https://github.com/DavideDaniel)
-| [Jason](https://github.com/Jingo88)
-| [Rachel](https://github.com/r-a-c-h-e-l)
-| [Tiffany](https://github.com/tiffanyposs)
+[**Ciara**](https://github.com/cfo613) 
+| [**David**](https://github.com/DavideDaniel)
+| [**Jason**](https://github.com/Jingo88)
+| [**Rachel**](https://github.com/r-a-c-h-e-l)
+| [**Tiffany**](https://github.com/tiffanyposs)
 
 ---
 >"jQuery ... it's just JavaScript..." <br>
@@ -73,49 +74,61 @@ In order to get started with jQuery you have a couple options to access the jQue
     ```
 
 
-## [Basics](id:anchor2) - syntactical overview
+## [Basics](id:anchor2) 
 ---
+Assuming the reader knows Javascript you'll find striking similarities between the two. That's because jQuery is just a slightly different way to write Javascript. 
+
+#####Syntactical overview
+***
+	
+   What is $ ?
+   Buried in the core jQuery code you'll find this:
+    
+   ```
+   window.jQuery = window.$ = jQuery;
+   ```
+
+   The jQuery library basically provides the function `jQuery` which as shown above allows `$` to be used as a shorter way to just call the function. Because functions are objects, `$` then has properties and methods which we'll see further through the tutorial.
+
+For example, in order to safely manipulate a page, you will use the `.ready` function.
+	
+   ```
+	$( document ).ready(function() { 	// This ensures the code inside will only run once 
+    	console.log( "Ready" );			// the page DOM is ready
+	});
+	
+	$(function() {					 // Same thing but not very clear.. why? It's just jQuery!
+  		console.log( 'Ready' );		 // but for real, it's adhering to the principle of writing 
+	});								 // less
+   ```
 
 
-   So what is $ ?
-   
-   $ creates an object in jQuery - allows you to use the jQuery library
+The key thing to remember is that jQuery syntax is made for selecting HTML elements and performing actions on html elements.
 
+Basically the syntax is: 
+`$(selector).action()`
 
-   The jQuery syntax is made for selecting HTML elements and performing actions on html elements.
+**Note**: You can write JavaScript inside jQuery!
 
-Basic syntax is: $(selector).action()
+Here's a quick syntax comparison:
 
-You can write JavaScript inside jQuery
+	element = document.querySelector('li')		// javascript version
+	element = $('li')							// jQuery version
 
-$() is just shorthand for jQuery()
+More examples [here](http://youmightnotneedjquery.com/)!
 
-jQuery grabs items in an easier way than JavaScript
+######Some things you can do with jQuery syntax
+   ***
+1. You can grab by html elements, classes or ids.
 
-	element = document.querySelector('li')
-
-	element = $('li')
-
-
-1. Before starting to use jQuery you will need to get the document ready.
-Document refers to your file.
-
-	```javascript
-		$(document).ready(function(){
-			do something...
-	})
+	```
+	$( "#nav-menu" ); // select via ID
+	$( "div" );      // select all div items on the page
+	$( "div p" );   // select p items that are inside div
+	$( ".name" ); // select all elements with a class of "name"
 	```
 
-2. You can grab by html elements, classes or ids.
-
-	```
-	$( '#nav-menu' ); // select via ID
-	$( 'li' );      // select all list items on the page
-	$( 'ul li' );   // select list items that are in unordered lists
-	$( '.person' ); // select all elements with a class of 'person'
-	```
-
-3. You can also grab via DOM elements like children, firstBodyChild. In order to grab a single element:
+2. You can also grab via DOM elements like children & firstBodyChild. In order to grab a single element:
 
 	```
  	var listItems = $( 'li' );
@@ -130,29 +143,29 @@ Document refers to your file.
 	secondListItem.remove();
 	```
 
-
-4. Creating a new element in jQuery:
+3. Example of creating a new element in jQuery:
 
 	```
-	$( '<p>', {					// create the element
+	$( "<p>", {					// create the element
 		html : "Hello World",	// call on html to change the innerHTML
-		"class": "greeting",	// assign the class -- note that id
+		"class": "greeting",	// assign the class -- note that class & id go in quotes
 		"id": "my_greeting"		// assign the id
 	);
 
-	$( '.person' ); // select all elements with a class of 'person'
+	$( ".name" ); 			// select all elements with a class of 'name'
 	```
 
-5. There are 2 types of methods:
+4. There are 2 types of methods:
    * Getters - methods that grab elements from the document `var first = listItems.get(0)`
    * Setters - change the selection in some way `$( "li" ).html = "examples"`
-   * Iteration
+   
 
-		```
-		// grab all li and change inner HTML to string "I'm a string"
-		$( "li" ).html( "I'm a string" );
+5. Iterating through the elements
 
-		```
+	```
+	// grab all li and change inner HTML to string "I'm a string"
+	$( "li" ).html( "I'm a string" );
+	```
 
 6. One cool thing about jQuery is the ability to chain methods. For example:
 
@@ -166,16 +179,18 @@ Document refers to your file.
     .attr( 'title', "Hover over me" );			// set title to "Hover over me"
  	```
 
-## Traversal - moving through your document elements
+## [Traversal](id:anchor3)
 ---
+jQuery lets us traverse or "move through" the html elements on our page. 
 
-
-1. jQuery lets us traverse or "move through" the html elements on our page. Let's set an example html frame:
+#####Moving through your document elements
+***
+1. Let's set an example html frame:
 
 
    ```
-	<body> //ancestor of all, parent of div.d01 and div.d02
-    	<div class = "d01"> // child of body, parent of h3, sibling of d02
+	<body> 		//ancestor of all, parent of div.d01 and div.d02
+    	<div class = "d01">  // child of body, parent of h3, sibling of d02
         	<h3>I'm a little string, short and stout</h3> // descendent of div.d01
       	</div>
     	<div class = "d02"> // child of body, parent of h4, sibling of d01
