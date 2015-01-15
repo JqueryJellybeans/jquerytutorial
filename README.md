@@ -2,23 +2,26 @@
 #jQuery Tutorial
 ===
 
->"jQuery ... it's just JavaScript"
+>"jQuery ... it's just JavaScript" <br>
 >        				- Maria
 
 
 ## Background
+---
 
-jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use.
-Hence the motto of: **_Write less, do more._**
+jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use, hence the motto: **_Write less, do more._**
 
-It does not replace JavaScript (the code you write in jQuery is still JavaScript), but it does simplify tasks by
-writing less code.
+It does not replace JavaScript (the code you write in jQuery is still JavaScript - as you'll hear from most js purists!), but it does simplify tasks by writing less code.
+
 Here are some the important core features supported by jQuery:
 
  * DOM manipulation
  * Effects
 
-The great thing about jQuery is the number of plug-ins or libraries available that you can leverage.  
+Today CSS3 and JS allow you to do many of the things that jQuery was originally made for.
+[You Might Not Need jQuery](http://youmightnotneedjquery.com/) is a handy site that compares jQuery to JS and lets you determine if you need jQuery or not.
+
+The great thing about jQuery is the number of plug-ins or libraries available that you can leverage. 
 
 ## ways to implement in your site
 1. Access the jQuery core libraries:
@@ -152,8 +155,6 @@ Document refers to your file.
 
 
 
-# Plugins
----
 
 # Effects
 ---
@@ -365,7 +366,26 @@ The .ajax() method is a way of creating an asynchronous http request. Make sure 
    });
    ```
 
+# Plugins
+---
+###Links
 
+Here are some examples of plugins that use jQuery to build powerful effects.
 
+[ScrollMagic](http://janpaepke.github.io/ScrollMagic/)  
+Scroll Magic is a plugin that allows you to render multiple effects while scrolling down a page.
 
+[oriDomi](http://oridomi.com/)  
+This plugin allows you to crumple an image on the screen like a piece of paper.
 
+[Zoomooz.js](http://jaukia.github.io/zoomooz/)  
+Zoomooz allows you to zoom and manipulate screen position.
+
+[midnight.js](http://aerolab.github.io/midnight.js/)  
+Midnight allows you to switch fixed headers as you scroll down the page.
+
+[vibe](http://vodkabears.github.io/vide/)  
+This allows you to add video backgrounds to your page.
+
+[parallax.js](http://matthew.wagerfield.com/parallax/)  
+Parallax.js allows you to create depth and motion to your site that reacts to cursor and smart device movement. Check it out!
