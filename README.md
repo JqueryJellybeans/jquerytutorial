@@ -2,30 +2,37 @@
 #jQuery Tutorial
 ===
 
->"jQuery ... it's just JavaScript"
+>"jQuery ... it's just JavaScript" <br>
 >        				- Maria
 
 
+
+
+
 ## background and overview
+---
+jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use, hence the motto: **_Write less, do more._**
 
-jQuery is a feature-rich JavaScript library created by John Resig in 2006 with the purpose of making JavaScript easier to use.
-Hence the motto of: **_Write less, do more._**
+It does not replace JavaScript (the code you write in jQuery is still JavaScript), but it does simplify tasks by writing less code.
 
-It does not replace JavaScript (the code you write in jQuery is still JavaScript), but it does simplify tasks by
-writing less code.
+One of the great things about jQuery is the number of plug-ins available that you can leverage.
 
-The great thing about jQuery is the number of plug-ins available that you can leverage.
+Today CSS3 and JS allow you to do many of the things that jQuery was originally made for.
+[You Might Not Need jQuery](http://youmightnotneedjquery.com/) is a handy site that compares jQuery to JS and lets you determine if you need jQuery or not.
 
 In this tutorial, we will cover the following basic jQuery concepts:
 
-1. **getting started** - ways to implement in your site
-2. **basics** - syntax
-3. **traversal** - moving through your document elements
-4. **events** - actions that can be detected by your web app
+1. **Getting Started** - ways to implement in your site
+2. **Basics** - syntactical overview
+3. **Traversal** - moving through your document elements
+4. **Events** - actions that can be detected by your web app
 5. **AJAX** - technology that helps us load data from the server without having to refresh the page
-6. **effects** - jQuery methods to create visual effects
+6. **Effects** - jQuery methods to create visual effects
+7. **Plug-ins** - JS code files that provide useful jQuery methods which can be used along with jQuery library methods.
 
-## getting started - ways to implement in your site
+## Getting Started - ways to implement in your site
+---
+
 1. Access the jQuery core libraries:
    * there are a few ways to do this. You can download the compressed and uncompressed files. jQuery has opinions on which files are better for which purposes.
    You can find out more about that here: [jQuery downloads] (http://jquery.com/download/).
@@ -49,8 +56,8 @@ In this tutorial, we will cover the following basic jQuery concepts:
    **Importance of Structure**: within your links section, it's important to have jquery first before any other libraries you will be using
 
 
-## basics - syntax
-
+## Basics - syntactical overview
+---
 
 $ creates an object in jQuery - allows you to use the jQuery library
 
@@ -73,9 +80,11 @@ jQuery grabs items in an easier way than JavaScript
 1. Before starting to use jQuery you'll need to get the document ready.
 Document refers to your file.
 
+	```
 	$(document).ready(function(){
 			do something...
 	})
+	```
 
 2. You can grab by html elements, classes or ids.
 
@@ -86,16 +95,23 @@ Document refers to your file.
 	$( '.person' ); // select all elements with a class of 'person'
 	```
 
-	You can also grab via DOM elements like children, firstBodyChild.
- In order to grab a single element:
-	
+3. You can also grab via DOM elements like children, firstBodyChild. In order to grab a single element:
+
 	```
  	var listItems = $( 'li' );
 	var rawListItem = listItems[0]; // or listItems.get( 0 )
 	var html = rawListItem.innerHTML;
 	```
+	 or
 
-2. Creating a new element in jQuery:
+	```
+	var listItems = $( 'li' );
+	var secondListItem = listItems.eq( 1 );
+	secondListItem.remove();
+	```
+
+
+4. Creating a new element in jQuery:
 
 	```
 	$( '<p>', {					// create the element
@@ -107,24 +123,7 @@ Document refers to your file.
 	$( '.person' ); // select all elements with a class of 'person'
 	```
 
-3. You can also grab via DOM elements like children, firstBodyChild.
- In order to grab a single element:
-
- 	```
- 	var listItems = $( 'li' );
-	var rawListItem = listItems[0]; // or listItems.get( 0 )
-	var html = rawListItem.innerHTML;
-	```
-
-  or
-
-	```
-	var listItems = $( 'li' );
-	var secondListItem = listItems.eq( 1 );
-	secondListItem.remove();
-	```
-
-4. There are 2 types of methods:
+5. There are 2 types of methods:
    * Getters - methods that grab elements from the document `var first = listItems.get(0)`
    * Setters - change the selection in some way `$( "li" ).html = "examples"`
    * Iteration
@@ -135,7 +134,7 @@ Document refers to your file.
 
 		```
 
-5. One cool thing about jQuery is the ability to chain methods. For example:
+6. One cool thing about jQuery is the ability to chain methods. For example:
 
 	```
 	 // grab li
@@ -151,189 +150,7 @@ Document refers to your file.
     .attr( 'title', "Hover over me" );
  	```
 
-
-
-
-# Plugins
----
-
-# Effects
----
-
-### Fading Effects
----
-
-* .fadeIn() - fadeIn method takes two parameters .fadeIn([duration], [function]). The duration can be written in milliseconds, or "fast" and "slow". The second parameter (function) is optional, and if used will be a callback function.  
-
-* .fadeOut() - the fadeOut method will be written the same way as the fadeIn, but has the opposite effect. The parameters it takes in are also the same. The two methods will look like this.
-
-```
-$('#divFade').fadeIn(2000)
-
-```
-
-```
-$('#divFade').fadeOut(2000)
-```
-
-With a second parameter the code may look like
-
-```
-$('#divFade').fadeIn(2000, function(){
-        $('#divFade').fadeOut(2000);
-    })
-```
-
-* .fadeToggle() - Luckily with the jQuery framework we also have the method fadeToggle. This is especially handy when you want a div to fade in and out. It is also written with the same parameters as the fadeIn and fadeOut methods
-```
-$('#divFade').fadeToggle(2000);
-
-```
-
-One thing to note is that all four of these methods will also run without any parameters
-```
-$('#divFade').fadeToggle();
-```
-
-* .fadeTo() - can take up to three parameters. .fadeTo([duration], [opacity], [function]).
-
-
-* .slideUp()
-* .slideDown()
-* .slideToggle()
-* .animate()
-* .stop()
-
-you can also string together the different methods
-
-examples
-$('#moveBox').slideUp()
-
-## Sliding Effects
-
-* .slideUp()
-* .slideDown()
-* .slideToggle()
-
-The format for these three methods can take up to three parameters, or none at all.
-the first parameter will be the speed that the sliding effect completes at. It can be written in milliseconds, "fast" or "slow". The second parameter is the easing parameter. There are two options, "swing" and "linear". By using "swing" the sliding effect will be slow in the beginning and end, but fast in the middle. The "linear" easing will keep the sliding effect at a constant speed throughout. If there is no defined easing parameter it will slide in the "swing" motion. The third parameter is a callback function to be executed when the sliding effect is completed. An example for all three are show below.
-
-```$('#slideMe').slideUp(2000, "linear");
-```
-```$('#slideMe').slideDown(2000, "swing");
-```
-```$('#slideMe').slideToggle();
-
-
-
-## The Animate Method
-* .animate() - jQuery comes with a very handy animate method. The method accepts up to three parameters. It will be written as .animate({parameters}, speed, [function]);. The first parameter will be a object of the changing animations. You can utilize various css values inside the curly brackets and their movements. The second parament is the speed at which the animations will take place, and the function will be executed when the effects are completed. An example is shown below:
-
-```$('#movingDiv').animate({
-	left: '250px',
-	top: '100px',
-	opacity: '0.5',
-}, 2000)
-```
-
-
-
-* .stop() - the stop method will stop the current animation as it stands. You can utilize this method if you have an animation, and provide the user a button to pause the animation. stop() can have up to two parameters, or take none at all. Both parameters are boolean values that will take true or false. The first parameter determines if you want to pause the animation or "clear the queue" and the second parameter determines if you want to jump to the end of the animation or not. These can be decided using the booleans "true" or "false"
-
-$('#movingDiv').stop(true, false);
-
-
-* .finish() - the finish method is similar to the stop method. However, it will always jump to the end of the animation. Stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements.
-
-$('#movingDiv').finish();
-
-
-
-
-you can also string together the different methods
-
-examples
-$('#moveBox').slideUp().fadeOut();
-
-
-
-
-
-
-
-## Events
----
-jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
-* .click()
-* .keyup()
-* .keydown()
-* .keypress()
-* .scroll()
-* .mouseenter()
-* .mouseleave()
-* .mouseover()
-
-The syntax for these methods are usually written as "$('element that is selected')(event type)(function);" An example is below.
-
-```$('button').click(function(){
-	alert('Hello World');
-})
-```
-
-```$('#image').mouseover(function(){
-		$('#image').slideUp(2000, 'linear');
-})
-```
-
-```$('input').keypress(function(evt){
-	if (evt.key === 13){
-		alert("you pressed enter");
-	}
-})
-```
-
-### Binding and Unbinding
-
-If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener you can utilize the bind and unbind methods.
-
-.bind() - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
-
-```$('button').bind("click", function(){
-	alert("you have clicked the button");
-})
-```
-
-.unbind() - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An excellentample is below:
-
-```$('button').unbind('click');
-```
-
-
-
-
-### AJAX
-
-The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous Javascript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by Javascript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
-
-
-Ajax is handled differently between browsers. jQuery allows developers to get around this by offering methods such as the .ajax(), .get(), .getScript(), .getJSON(), .load(), and the like.
-
-
-The .ajax() method is a way of creating an asynchronous http request. Make sure that the data received from the server is in the format that you requested; if not your code may fail. The .ajax() method is written as so: jQuery.ajax(url[settings]). There are a plethora of settings developers can input when using the method. For a full list of these settings, and their parameters you can visit http://api.jquery.com/jQuery.ajax/. One example of this methods utilization is:
-
-```$.ajax({
-	statusCode: {
-		404: function() {
-			alert("sorry the page was not found");
-		}
-	}
-});
-```
-
-
-
-
-## Traversal - Moving through your document elements
+## Traversal - moving through your document elements
 ---
 
 
@@ -351,18 +168,217 @@ The .ajax() method is a way of creating an asynchronous http request. Make sure 
 	</body>
   ```
 
-   Every div has its own index, and can be located directly by using eq(index) method as below example.
+2. Every div has its own index, and can be located directly by using `eq(index)` method, as in the following example: 
+
+	Setting an initial selection:
+
+  	Every child element starts its index from zero, thus, div item 2 would be accessed by using $("div").eq(1) or $(".d02").
+
+  	You can also use the find (selector) method to find the elements.
+
+  	```
+  		$(document).ready(function() {
+  			// finds h3 elements inside all divs and adds class selected
+      	$("div").find("h3").addClass("selected");  
+   		});
+   	```
+
+## Events
+---
+jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
+
+* `.click()`
+* `.keyup()`
+* `.keydown()`
+* `.keypress()`
+* `.scroll()`
+* `.mouseenter()`
+* `.mouseleave()`
+* `.mouseover()`
+
+The syntax for these methods are usually written as "$('element that is selected')(event type)(function);" An example is below.
+
+		$('button').click(function(){
+			alert('Hello World');
+		})
+	
+	
+		$('#image').mouseover(function(){
+		$('#image').slideUp(2000, 'linear');
+		})
+	
+		$('input').keypress(function(evt){
+		if (evt.key === 13){
+			alert("you pressed enter");
+		}
+		})
+	
+
+### Binding and Unbinding
+
+If there is a scenario where you need an element to have an event listener, and then eventually remove that event listener, you can utilize the bind and unbind methods.
+
+`.bind()` - this method will act similar to the event listener methods above, the only exception is the event type is not a handler. It is written as (selector).bind(event type, function). An example is below:
+
+	```
+		$('button').bind("click", function(){
+			alert("you have clicked the button");
+		})
+
+	```
+
+`.unbind()` - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An example is below:
+
+	```
+	
+	$('button').unbind('click');
+	
+	```
 
 
-2. Setting an initial selection:
 
-  Every child element starts its index from zero, thus, div item 2 would be accessed by using $("div").eq(1) or $(".d02").
 
-  You can also use the find (selector) method to find the elements.
+## AJAX
+---
 
-  ```
-  	$(document).ready(function() {
-  		// finds h3 elements inside all divs and adds class selected
-      $("div").find("h3").addClass("selected");  
-   });
-   ```
+The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous JavaScript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by JavaScript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
+
+
+AJAX is handled differently between browsers. jQuery allows developers to get around this by offering methods such as the .ajax(), .get(), .getScript(), .getJSON(), .load() to name a few.
+
+
+The .ajax() method is a way of creating an asynchronous http request. Make sure that the data received from the server is in the format that you requested; if not your code may fail. The .ajax() method is written as so: `jQuery.ajax(url[settings])`. There are a plethora of settings developers can input when using the method. For a full list of these settings, and their parameters you can visit [http://api.jquery.com/jQuery.ajax/](http://api.jquery.com/jQuery.ajax/). One example of this methods utilization is:
+
+```
+$.ajax({
+	statusCode: {
+		404: function() {
+			alert("sorry the page was not found");
+		}
+	}
+});
+```
+
+
+# Effects
+---
+
+### Fading Effects
+
+* `.fadeIn()` - fadeIn method takes two parameters .fadeIn([duration], [function]). The duration can be written in milliseconds, or "fast" and "slow". The second parameter (function) is optional, and if used will be a callback function.  
+
+* `.fadeOut()` - the fadeOut method will be written the same way as the fadeIn, but has the opposite effect. The parameters it takes in are also the same. The two methods will look like this.
+
+	```
+	$('#divFade').fadeIn(2000)
+
+	```
+
+	```
+	$('#divFade').fadeOut(2000)
+	```
+
+	With a second parameter the code may look like:
+
+	```
+	$('#divFade').fadeIn(2000, function(){
+        $('#divFade').fadeOut(2000);
+    })
+	```
+
+* `.fadeToggle()` - luckily with the jQuery framework we also have the fadeToggle method. This is especially handy when you want a div to fade in and out. It is also written with the same parameters as the fadeIn and fadeOut methods:
+
+	```
+	$('#divFade').fadeToggle(2000);
+
+	```
+
+* `.fadeTo()` - can take up to three parameters: 
+
+	```
+	.fadeTo([duration], [opacity], [function]).
+	```
+
+One thing to note is that all four of these methods will also run without any parameters. Pretty cool!
+
+
+### Sliding Effects
+
+* `.slideUp()`
+* `.slideDown()`
+* `.slideToggle()`
+
+Examples for all three are show below:
+
+```
+$('#slideMe').slideUp(2000, "linear");
+```
+```
+$('#slideMe').slideDown(2000, "swing");
+```
+```
+$('#slideMe').slideToggle();
+```
+
+The format for these three methods can take up to three parameters, or none at all.
+
+* First parameter: the speed that the sliding effect completes at. It can be written in milliseconds, "fast" or "slow". 
+* Second parameter: the easing parameter. There are two options, "swing" and "linear". By using "swing" the sliding effect will be slow in the beginning and end, but fast in the middle. The "linear" easing will keep the sliding effect at a constant speed throughout. If there is no defined easing parameter it will slide in the "swing" motion. 
+* Third parameter:  a callback function to be executed when the sliding effect is completed. 
+
+
+### The Animate Method
+* `.animate()` - jQuery comes with a very handy animate method. The method accepts up to three parameters. It will be written as `.animate({parameters}, speed, [function]);`. 
+	* First parameter: an object of the changing animations. You can utilize various css values inside the curly brackets and their movements
+	* Second parameter: the speed at which the animations will take place, and the function will be executed when the effects are completed. 
+	* Third parameter: the complete callback function that is called once the animation is complete. This parameter is optional. 
+
+
+	An example is shown below:
+
+	```
+	$('#movingDiv').animate({
+	left: '250px',
+	top: '100px',
+	opacity: '0.5',
+	}, 2000)
+	```
+
+
+
+* `.stop()` - the stop method will stop the current animation as it stands. You can utilize this method if you have an animation, and provide the user a button to pause the animation. stop() can have up to two parameters, or take none at all. Both parameters are boolean values that will take true or false. The first parameter determines if you want to pause the animation or "clear the queue" and the second parameter determines if you want to jump to the end of the animation or not. For example:
+
+	```
+	$('#movingDiv').stop(true, false);
+	```
+
+* `.finish()` - the finish method is similar to the stop method. When called, it will stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements.
+	
+	```
+	$('#movingDiv').finish();
+	```
+
+
+## Plugins
+---
+###Links
+
+Here are some examples of plugins that use jQuery to build powerful effects:
+
+[ScrollMagic](http://janpaepke.github.io/ScrollMagic/)  
+Scroll Magic is a plugin that allows you to render multiple effects while scrolling down a page.
+
+[oriDomi](http://oridomi.com/)  
+This plugin allows you to crumple an image on the screen like a piece of paper.
+
+[Zoomooz.js](http://jaukia.github.io/zoomooz/)  
+Zoomooz allows you to zoom and manipulate screen position.
+
+[midnight.js](http://aerolab.github.io/midnight.js/)  
+Midnight allows you to switch fixed headers as you scroll down the page.
+
+[vibe](http://vodkabears.github.io/vide/)  
+This allows you to add video backgrounds to your page.
+
+[parallax.js](http://matthew.wagerfield.com/parallax/)  
+Parallax.js allows you to create depth and motion to your site that reacts to cursor and smart device movement. Check it out!

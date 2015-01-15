@@ -1,6 +1,6 @@
 various effects - fading, sliding, animations. Much more concise to write with css
 
-# Fading Effects
+## Fading Effects
 
 * .fadeIn() - fadeIn method takes two parameters .fadeIn([duration], [function]). The duration can be written in milliseconds, or "fast" and "slow". The second parameter (function) is optional, and if used will be a callback function.  
 
@@ -31,7 +31,7 @@ One thing to note is that all four of these methods will also run without any pa
 
 
 
-# Sliding Effects
+## Sliding Effects
 
 * .slideUp()
 * .slideDown()
@@ -48,7 +48,8 @@ the first parameter will be the speed that the sliding effect completes at. It c
 
 
 
-# The Animate Method
+## The Animate Method
+
 * .animate() - jQuery comes with a very handy animate method. The method accepts up to three parameters. It will be written as .animate({parameters}, speed, [function]);. The first parameter will be a object of the changing animations. You can utilize various css values inside the curly brackets and their movements. The second parament is the speed at which the animations will take place, and the function will be executed when the effects are completed. An example is shown below:
 
 ```$('#movingDiv').animate({
@@ -83,7 +84,7 @@ $('#moveBox').slideUp().fadeOut();
 
 
 
-# Events
+## Events
 
 jQuery allows you, the developer, to write code easily for users to interact with the webpage. Some of the more common event methods are:
 * .click()
@@ -133,7 +134,7 @@ If there is a scenario where you need an element to have an event listener, and 
 
 
 
-# AJAX
+## AJAX
 
 The days of refreshing a webpage to load content are gone. AJAX, short for Asynchronous Javascript and XML will allow the user to take data from the background and load it to your webpage. Since the Ajax requests are triggered by Javascript code, it is asynchronous, and the rest of your code will continue to execute at the same time.
 
@@ -152,14 +153,10 @@ The .ajax() method is a way of creating an asynchronous http request. Make sure 
 });
 ```
 
+You can also bind Ajax events to elements in the same fashion you would bind other events. You may want to use this if you ever find yourself needing to start or stop an operation whenever an Ajax request is called. Visit http://api.jquery.com/Ajax_Events/ for more documentation about the various event triggers. 
 
 
-
-
-
-
-
-
+One thing to note is that Ajax does not work with all domains. For this issues we can use the .jsonp() method (JSON with Padding). This uses script tags to load files with other JS and JSON content from another domain. Browsers have begun to implement a new technology called CORS(Cross Origin Resource Sharing), which allows Ajax request to different domains.
 
 
 
