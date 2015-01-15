@@ -13,7 +13,7 @@ Contributers:
 
 ---
 >"jQuery ... it's just JavaScript..." <br>
->        				- Maria
+>        				- Wise Words
 
 
 ## Background and Overview
@@ -25,45 +25,55 @@ It does not replace JavaScript (the code you write in jQuery is still JavaScript
 One of the great things about jQuery is the number of plug-ins available that you can leverage.
 
 Today CSS3 and JS allow you to do many of the things that jQuery was originally made for.
+
 [You Might Not Need jQuery](http://youmightnotneedjquery.com/) is a handy site that compares jQuery to JS and lets you determine if you need jQuery or not.
 
 In this tutorial, we will cover the following basic jQuery concepts:
 
-1. **Getting Started** - ways to implement in your site
-2. **Basics** - syntactical overview
-3. **Traversal** - moving through your document elements
-4. **Events** - actions that can be detected by your web app
-5. **AJAX** - cross browser integration through jQuery
-6. **Effects** - jQuery methods to create visual effects
-7. **Plug-ins** - JS code files that provide useful jQuery methods which can be used along with jQuery library methods.
+1. [**Getting Started**](#anchor1) - Implementing jQuery in your site/app
+2. [**Basics**](#anchor2) - syntactical overview
+3. [**Traversal**](#anchor3) - moving through your document elements
+4. [**Events**](#anchor4) - actions that can be detected by your web app
+5. [**AJAX**](#anchor5) - cross browser integration through jQuery
+6. [**Effects**](#anchor6) - jQuery methods to create visual effects
+7. [**Plug-ins**](#anchor7) - JS code files that provide useful jQuery methods which can be used along with jQuery library methods.
 
-## Getting Started - ways to implement in your site
+## [Getting Started](id:anchor1) 
 ---
 
-1. Access the jQuery core libraries:
-   * there are a few ways to do this. You can download the compressed and uncompressed files. jQuery has opinions on which files are better for which purposes.
-   You can find out more about that here: [jQuery downloads](http://jquery.com/download/).
-   * CDN
-1. Link to jQuery library through your HTML file:
-   * First you want to link to the jQuery core library through a script tag in your HTML file.
-   if you downloaded:
+In order to get started with jQuery you have a couple options to access the jQuery core library.
+
+1. Download the compressed or uncompressed files. jQuery has opinions on which files are better for which purposes. 
+   You can find out more about that as well as download them at: 
+   ####[jQuery downloads](http://jquery.com/download/)
+2. Alternatively you can link to a Content Delivery Network (CDNs). A couple examples would be:
+   * **[Google CDN](https://developers.google.com/speed/libraries/devguide#jquery)**
+   * **[CDNJS](http://cdnjs.com/libraries/jquery/)**
+
+3. To implement the core library on to your site, link the jQuery library through your HTML file:
 
 	```
+	// Example of link to js file in your root directory
 	<script src="jquery.js"></script>
+	
+	// Example of a link to a CDN
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   	```
 
+   **Remember to link your js scripts in the right order!**
+   ***
+    When linking to jQuery core library, plug-ins and your own script files, remember to structure it so that as the html file is read, the scripts are run in the right order. 
+    
+   For example, here we link the core library, then plug-ins, and finally our scripts.
+    
     ```
-   if you used a CDN:
-
-	```
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery-scrollto.js"></script>
+    <script src="scroll.js"></script>
     ```
-   The src attribute in the `<script>` element must point to a copy of jQuery.
-
-   **Importance of Structure**: within your links section, it's important to have jquery first before any other libraries you will be using
 
 
-## Basics - syntactical overview
+## [Basics](id:anchor2) - syntactical overview
 ---
 
 
