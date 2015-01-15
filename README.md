@@ -182,6 +182,7 @@ $( this ).addClass( 'clicked' );    	// add a class to the li called ".clicked"
 
 <h3 id = "ex1" >Excercise 1</h2>
 ---
+***
 [Clone this linked repo for ease](https://github.com/JqueryJellybeans/jqueryExcercises)
 
 ####[Toggle demo](https://github.com/JqueryJellybeans/jquerytutorial/tree/master/examples/toggleExample/v1.html)
@@ -424,6 +425,8 @@ The format for these three methods can take up to three parameters, or none at a
 <h2 id = "ex2" >Excercise 2</h2>
 ---
 ***
+[Clone this linked repo for ease](https://github.com/JqueryJellybeans/jqueryExcercises)
+
 ####[Scrolling](https://github.com/JqueryJellybeans/jquerytutorial/tree/master/examples/scroll/scroll.html)
 
 ####[Parallax](https://github.com/JqueryJellybeans/jquerytutorial/tree/master/examples/parallax/test.html)
