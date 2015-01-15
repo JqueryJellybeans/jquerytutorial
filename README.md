@@ -340,7 +340,7 @@ One thing to note is that Ajax does not work with all domains. For this issues w
 ## [Effects](id:anchor6)
 ---
 
-### Fading Effects
+#### Fading Effects
 
 * `.fadeIn()` - fadeIn method takes two parameters .fadeIn([duration], [function]). The duration can be written in milliseconds, or "fast" and "slow". The second parameter (function) is optional, and if used will be a callback function.  
 
@@ -379,7 +379,7 @@ One thing to note is that Ajax does not work with all domains. For this issues w
 One thing to note is that all four of these methods will also run without any parameters. Pretty cool!
 
 
-### Sliding Effects
+#### Sliding Effects
 
 * `.slideUp()`
 * `.slideDown()`
@@ -404,7 +404,7 @@ The format for these three methods can take up to three parameters, or none at a
 * Third parameter:  a callback function to be executed when the sliding effect is completed. 
 
 
-### The Animate Method
+#### The Animate Method
 * `.animate()` - jQuery comes with a very handy animate method. The method accepts up to three parameters. It will be written as `.animate({parameters}, speed, [function]);`. 
 	* First parameter: an object of the changing animations. You can utilize various css values inside the curly brackets and their movements
 	* Second parameter: the speed at which the animations will take place, and the function will be executed when the effects are completed. 
@@ -435,27 +435,32 @@ The format for these three methods can take up to three parameters, or none at a
 	$('#movingDiv').finish();
 	```
 
-
-## Plugins
+## [Plugins](id:anchor7)
 ---
 ###Links
 
 Here are some examples of plugins that use jQuery to build powerful effects:
 
-[ScrollMagic](http://janpaepke.github.io/ScrollMagic/)  
+![](img/scroll_magic.png)
+###[ScrollMagic](http://janpaepke.github.io/ScrollMagic/)  
 Scroll Magic is a plugin that allows you to render multiple effects while scrolling down a page.
 
-[oriDomi](http://oridomi.com/)  
+![](img/oridomi.png)
+###[oriDomi](http://oridomi.com/)  
 This plugin allows you to crumple an image on the screen like a piece of paper.
 
-[Zoomooz.js](http://jaukia.github.io/zoomooz/)  
+![](img/zoomooz.png)
+###[Zoomooz.js](http://jaukia.github.io/zoomooz/)  
 Zoomooz allows you to zoom and manipulate screen position.
 
-[midnight.js](http://aerolab.github.io/midnight.js/)  
+![](img/midnight.png)
+###[midnight.js](http://aerolab.github.io/midnight.js/)  
 Midnight allows you to switch fixed headers as you scroll down the page.
 
-[vibe](http://vodkabears.github.io/vide/)  
+![](img/vide.png)
+###[vide](http://vodkabears.github.io/vide/)  
 This allows you to add video backgrounds to your page.
 
-[parallax.js](http://matthew.wagerfield.com/parallax/)  
+![](img/parallax.png)
+###[parallax.js](http://matthew.wagerfield.com/parallax/)  
 Parallax.js allows you to create depth and motion to your site that reacts to cursor and smart device movement. Check it out!
