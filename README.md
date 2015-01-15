@@ -18,14 +18,14 @@ The great thing about jQuery is the number of plug-ins available that you can le
 
 In this tutorial, we will cover the following basic jQuery concepts:
 
-1. getting started - ways to implement in your site
-2. basics - syntax
-3. traversal - moving through your document elements
-4. events - actions that can be detected by your web app
-5. AJAX - technology that helps us load data from the server without having to refresh the page
-6. effects - jQuery methods to create visual effects
+1. **getting started** - ways to implement in your site
+2. **basics** - syntax
+3. **traversal** - moving through your document elements
+4. **events** - actions that can be detected by your web app
+5. **AJAX** - technology that helps us load data from the server without having to refresh the page
+6. **effects** - jQuery methods to create visual effects
 
-## ways to implement in your site
+## getting started - ways to implement in your site
 1. Access the jQuery core libraries:
    * there are a few ways to do this. You can download the compressed and uncompressed files. jQuery has opinions on which files are better for which purposes.
    You can find out more about that here: [jQuery downloads] (http://jquery.com/download/).
@@ -46,14 +46,10 @@ In this tutorial, we will cover the following basic jQuery concepts:
     ```
    The src attribute in the `<script>` element must point to a copy of jQuery.
 
- ### importance of the structure
+   **Importance of Structure**: within your links section, it's important to have jquery first before any other libraries you will be using
 
- links need to have jquery first
- any other libraries you'll be using
- your scripts
 
 ## basics - syntax
-
 
 
 $ creates an object in jQuery - allows you to use the jQuery library
@@ -63,11 +59,11 @@ The jQuery syntax is made for selecting HTML elements and performing actions on 
 
 Basic syntax is: $(selector).action()
 
-You can write javascript inside jQuery
+You can write JavaScript inside jQuery
 
 $() is just shorthand for jQuery()
 
-jQuery grabs items in an easier way than javascript
+jQuery grabs items in an easier way than JavaScript
 
 	element = document.querySelector('li')
 
@@ -81,7 +77,7 @@ Document refers to your file.
 			do something...
 	})
 
-2. You can grab by html elements, classes or ids..
+2. You can grab by html elements, classes or ids.
 
 	```
 	$( '#nav-menu' ); // select via ID
@@ -92,11 +88,12 @@ Document refers to your file.
 
 	You can also grab via DOM elements like children, firstBodyChild.
  In order to grab a single element:
-
+	
+	```
  	var listItems = $( 'li' );
 	var rawListItem = listItems[0]; // or listItems.get( 0 )
 	var html = rawListItem.innerHTML;
-
+	```
 
 2. Creating a new element in jQuery:
 
@@ -130,7 +127,7 @@ Document refers to your file.
 4. There are 2 types of methods:
    * Getters - methods that grab elements from the document `var first = listItems.get(0)`
    * Setters - change the selection in some way `$( "li" ).html = "examples"`
-		*Iteration
+   * Iteration
 
 		```
 		// grab all li and change inner HTML to string "I'm a string"
@@ -306,7 +303,7 @@ If there is a scenario where you need an element to have an event listener, and 
 })
 ```
 
-.unbind() - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An example is below:
+.unbind() - this method will remove the event listener from an element. It can be written as (selector).unbind(event type, function). With unbind, the second parameter is not required. An excellentample is below:
 
 ```$('button').unbind('click');
 ```
