@@ -68,11 +68,12 @@ In order to get started with jQuery you have a couple options to access the jQue
 
    For example, here we link the core library, then plug-ins, and finally our scripts.
 
-```js
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="jquery-scrollto.js"></script>
-<script src="scroll.js"></script>
+  ```js
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="jquery-scrollto.js"></script>
+   <script src="scroll.js"></script>
     ```
+
 
 
 <h2 id="anchor2">Basics</h2>
