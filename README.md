@@ -39,7 +39,7 @@ In this tutorial, we will cover the following basic jQuery concepts:
 6. [**Effects**](#anchor6) - jQuery methods to create visual effects
 7. [**Plug-ins**](#anchor7) - JS code files that provide useful jQuery methods which can be used along with jQuery library methods.
 
-## [Getting Started](id:anchor1) 
+## [Getting Started](name:anchor1) 
 ---
 
 In order to get started with jQuery you have a couple options to access the jQuery core library.
@@ -75,7 +75,7 @@ In order to get started with jQuery you have a couple options to access the jQue
     ```
 
 
-## [Basics](id:anchor2) 
+## [Basics](name:anchor2) 
 ---
 Assuming the reader knows Javascript you'll find striking similarities between the two. That's because jQuery is just a slightly different way to write Javascript. 
 
@@ -180,7 +180,7 @@ More examples [here](http://youmightnotneedjquery.com/)!
     .attr( 'title', "Hover over me" );			// set title to "Hover over me"
  	```
 
-## [Traversal](id:anchor3)
+## [Traversal](name:anchor3)
 ---
 jQuery lets us traverse or "move through" the html elements on our page. 
 
